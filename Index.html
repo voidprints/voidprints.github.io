@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photo Navigation Page</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="your-logo.png" alt="Logo" />
+    </div>
+    <div class="search-icon" onclick="toggleMenu()">
+      <i class="fas fa-magnifying-glass"></i>
+    </div>
+  </header>
+
+  <!-- Overlay Menu -->
+  <div id="overlay-menu" class="overlay-menu">
+    <div class="menu-content">
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="photo-grid">
+    <a href="page1.html"><img src="photo1.jpg" alt="Photo 1"/></a>
+    <a href="page2.html"><img src="photo2.jpg" alt="Photo 2"/></a>
+    <a href="page3.html"><img src="photo3.jpg" alt="Photo 3"/></a>
+    <a href="page4.html"><img src="photo4.jpg" alt="Photo 4"/></a>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("overlay-menu");
+      menu.classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
