@@ -1,9 +1,11 @@
+/* General */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: white;
 }
 
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -26,28 +28,44 @@ body {
   color: black;
 }
 
+/* Full-screen overlay menu */
 .overlay-menu {
-  display: none;
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background: white;
-  border: 1px solid #ccc;
-  padding: 10px 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  z-index: 1001;
+  position: fixed;       /* Cover entire screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack buttons vertically */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
 }
 
 .overlay-menu.show {
-  display: block;
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.overlay-menu a {
+.overlay-menu .menu-content a {
+  display: block;        /* Each link takes full width */
+  color: white;
+  font-size: 2rem;
   text-decoration: none;
-  color: black;
-  font-weight: bold;
+  margin: 15px 0;       /* Spacing between buttons */
+  text-align: center;
+  transition: color 0.2s ease;
 }
 
+.overlay-menu .menu-content a:hover {
+  color: #ffcc00;       /* Hover effect */
+}
+
+/* Photo grid */
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
